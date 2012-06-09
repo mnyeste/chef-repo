@@ -7,7 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-tarball="apache-james-3.0-beta4-app.tar.gz"
+james_name="apache-james-3.0-beta4"
+tarball="#{james_name}-app.tar.gz"
+
 
 remote_file "/tmp/#{tarball}" do
   source "http://xenia.sote.hu/ftp/mirrors/www.apache.org/james/apache-james/3.0beta4/#{tarball}"       
@@ -18,3 +20,7 @@ end
 execute "tar -C /opt -xzf /tmp/#{tarball}" do
   user "root"
 end
+
+link "/etc/init.d/james" do
+ to "/opt/#{james_name}/bin/james" 
+end 
