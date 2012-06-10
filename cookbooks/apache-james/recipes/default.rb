@@ -33,4 +33,5 @@ end
 service "james" do
   supports :status => true, :restart => true
   action [ :enable, :start ]
+  priority 80
 end
