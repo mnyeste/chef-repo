@@ -3,7 +3,7 @@ description "testserver"
 
 run_list [
   "recipe[apt]",
-  "recipe[oracle-java]",
+  "role[java7]",
   "recipe[apache-james]",
   "recipe[jetty]"
 ]
