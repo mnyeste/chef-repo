@@ -1,5 +1,5 @@
 name "java6"
-description "Oracle JDK 5"
+description "Oracle JDK 6"
 
 run_list [
   "recipe[java]",
