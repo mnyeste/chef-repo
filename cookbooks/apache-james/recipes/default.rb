@@ -38,5 +38,7 @@ end
 
 execute "#{james_bin}/james-cli.sh -h localhost adddomain #{node[:james][:domain]}" do
   user "root"
+  retries 3
+  retry_delay 15
   not_if "#{james_bin}/james-cli.sh listdomains -h localhost|grep ^#{node[:james][:domain]}$"
 end 
