@@ -5,7 +5,8 @@ run_list [
   "recipe[apt]",
   "role[java6]",
   "recipe[apache-james]",
-  "recipe[jetty]"
+  "recipe[jetty]",
+  "recipe[gyorslevel]"
 ]
 
 override_attributes(
