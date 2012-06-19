@@ -7,38 +7,40 @@
 # All rights reserved - Do Not Redistribute
 #
 
-james_bin = "/opt/apache-james-#{node[:james][:version]}/bin"
-james_tarball = "apache-james-#{node[:james][:version]}-app.tar.gz"
-
 package "libc6-i386" do
   action :install
 end
 
-remote_file "/tmp/#{james_tarball}" do
-  source "#{node[:james][:mirror]}/#{node[:james][:version].sub('-','')}/#{james_tarball}"
+remote_file node[:james][:tarball]  do
+  source node[:james][:url]
+  checksum node[:james][:checksum]
   mode "0644"
-  action :create_if_missing
-  not_if "test -d #{james_bin}"
 end
 
-execute "tar -C /opt -xzf /tmp/#{james_tarball}" do
+
+execute "unpack james" do
+  command "tar xzf #{node[:james][:tarball]} -C #{node[:james][:parent_dir]}"
   user "root"
-  not_if "test -d #{james_bin}"
+  not_if "test -d #{node[:james][:install_dir]}"
 end
+
+link node[:james][:home] do
+ to node[:james][:install_dir]  
+end 
 
 link "/etc/init.d/james" do
- to "#{james_bin}/james"  
+ to "#{node[:james][:bin]}/james"  
 end 
 
 service "james" do
   supports :status => true, :restart => true
   action [ :enable, :start ]
-  priority 99 
+  priority 80 
 end
 
-execute "#{james_bin}/james-cli.sh -h localhost adddomain #{node[:james][:domain]}" do
+execute "#{node[:james][:bin]}/james-cli.sh -h localhost adddomain #{node[:james][:domain]}" do
   user "root"
   retries 3
   retry_delay 15
-  not_if "#{james_bin}/james-cli.sh listdomains -h localhost|grep ^#{node[:james][:domain]}$"
+  not_if "#{node[:james][:bin]}/james-cli.sh listdomains -h localhost|grep ^#{node[:james][:domain]}$"
 end 
