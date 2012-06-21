@@ -20,23 +20,12 @@ package "ddclient" do
   action :install
 end
 
-service "ddclient" do
-  supports :restart => true, :status => true, :reload => true
-  action [ :enable, :start]
-end
 
 template "/etc/ddclient.conf" do
   source "ddclient.conf.erb"
   owner "root"
   group "root"
   mode "0600"
-  notifies :restart, "service[ddclient]"
 end
 
-template "/etc/default/ddclient" do
-  source "ddclient.erb"
-  owner "root"
-  group "root"
-  mode "0600"
-  notifies :restart, "service[ddclient]"
-end
+execute "ddclient"
