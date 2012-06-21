@@ -1,5 +1,5 @@
-name "testserver"
-description "testserver"
+name "standalone"
+description "Standalone server"
 
 run_list [
   "recipe[apt]",
@@ -10,8 +10,3 @@ run_list [
   "recipe[gyorslevel]"
 ]
 
-override_attributes(
-  "james" => {
-    "version" => "3.0-beta4"
-  }
-)
