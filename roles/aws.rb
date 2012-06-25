@@ -12,6 +12,6 @@ override_attributes(
     "checksum" => "684e55852cfef59d3513d0b9e733a2323c42970bddeef556b84c32a31fd3cd03"
    },
   "james" => {
-    "domain" => "gyorsmail.no-ip.info"
+    "domain" => "gyorslevel.no-ip.info"
   }
 )
