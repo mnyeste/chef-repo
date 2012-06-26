@@ -1,3 +1,5 @@
-default[:gyorslevel][:url]          = "https://www.dropbox.com/s/mxzgp0wpdaeqc6s/gyorslevel-1.0-20120622.134856-5.war"
-default[:gyorslevel][:checksum]     = "b1bb681a5f50d3a0cf8e464a0a15e7cbeced9a14554ab64e95dc8aa22c94efce"
-  
+default[:gyorslevel][:url]          = "https://www.dropbox.com/s/cx2bz75z2hndhz3/gyorslevel-1.0-20120626.200728-6.war"
+default[:gyorslevel][:checksum]     = "80c4682368041d36fc84945b505b8756dc28f78425df44186d388c246bd00b2c"
+
+default[:gyorslevel][:domain]       = "localhost"
+default[:gyorslevel][:expiration]   = "60000"
