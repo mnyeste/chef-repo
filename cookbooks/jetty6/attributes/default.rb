@@ -9,7 +9,7 @@ default[:jetty][:group]        = "jetty"
 default[:jetty][:parent_dir]   ="/opt"
 default[:jetty][:install_dir]  = "#{default[:jetty][:parent_dir]}/jetty-#{default[:jetty][:version]}"  
 default[:jetty][:home]         = "#{default[:jetty][:parent_dir]}/jetty"
-default[:jetty][:webapp_dir]   = "#{default[:jetty][:install_dir]}/webapps"
-default[:jetty][:context_dir]  = "#{default[:jetty][:install_dir]}/contexts"
+default[:jetty][:webapp_dir]   = "#{default[:jetty][:home]}/webapps"
+default[:jetty][:context_dir]  = "#{default[:jetty][:home]}/contexts"
 
   

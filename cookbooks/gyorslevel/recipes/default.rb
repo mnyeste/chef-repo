@@ -18,6 +18,17 @@ template "/etc/gyorslevel/gyorslevel.cfg" do
   owner node[:jetty][:user] 
 end
 
+directory node[:gyorslevel][:staticstore] do
+  recursive true
+  group node[:jetty][:group]
+  owner node[:jetty][:user] 
+end
+
+template "#{node[:jetty][:context_dir]}/static.xml" do
+  source "static_xml.erb"
+  notifies :restart, "service[jetty]"
+end
+
 remote_file "#{node[:jetty][:webapp_dir]}/root.war" do
   source "#{node[:gyorslevel][:url]}?dl=1"
   checksum node[:gyorslevel][:checksum]
