@@ -17,7 +17,6 @@ remote_file node[:james][:tarball]  do
   mode "0644"
 end
 
-
 execute "unpack james" do
   command "tar xzf #{node[:james][:tarball]} -C #{node[:james][:parent_dir]}"
   user "root"
@@ -37,10 +36,3 @@ service "james" do
   action [ :enable, :start ]
   priority 80 
 end
-
-execute "#{node[:james][:bin]}/james-cli.sh -h localhost adddomain #{node[:james][:domain]}" do
-  user "root"
-  retries 3
-  retry_delay 15
-  not_if "#{node[:james][:bin]}/james-cli.sh listdomains -h localhost|grep ^#{node[:james][:domain]}$"
-end 

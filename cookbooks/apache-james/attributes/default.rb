@@ -6,7 +6,4 @@ default[:james][:tarball]      ="#{Chef::Config[:file_cache_path]}/apache-james-
 default[:james][:parent_dir]   ="/opt"
 default[:james][:install_dir]  = "#{default[:james][:parent_dir]}/apache-james-#{default[:james][:version]}"  
 default[:james][:home]         = "#{default[:james][:parent_dir]}/apache-james"
-default[:james][:bin]         = "#{default[:james][:home]}/bin"
-  
-default[:james][:domain] = "localhost"
-  
+default[:james][:bin]         = "#{default[:james][:home]}/bin"  
