@@ -30,8 +30,8 @@ template "#{node[:jetty][:context_dir]}/static.xml" do
 end
 
 remote_file "#{node[:jetty][:webapp_dir]}/root.war" do
-  source "#{node[:gyorslevel][:url]}?dl=1"
-  checksum node[:gyorslevel][:checksum]
+  source "#{node[:gyorslevel][:war][:url]}?dl=1"
+  checksum node[:gyorslevel][:war][:checksum]
   group node[:jetty][:group]
   owner node[:jetty][:user] 
   mode "0644"
