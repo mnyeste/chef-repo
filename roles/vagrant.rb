@@ -8,8 +8,8 @@ run_list [
 override_attributes(
   "gyorslevel" => {
     "war" => {
-      "url" => "http://dl.dropbox.com/u/73252658/gyorslevel/gyorslevel-1.0-796d8837ca.war",
-      "checksum" =>"19a8879abf2c6f45af2fc355c2aaf55d11a7941e32dbc90866ff8545c04e6670"
+      "url" => "http://dl.dropbox.com/u/73252658/gyorslevel/gyorslevel-1.0-c2f47445e2.war",
+      "checksum" =>"44075fe700d58809ad53a86720dd04475d9fb7aed7bee07e83749358007b71b2"
     }
   }
 )
