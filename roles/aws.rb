@@ -2,7 +2,8 @@ name "aws"
 description "Standalone server in AWS"
 
 run_list [
-  "role[standalone]"
+  "role[standalone]",
+  "role[zoneedit]"
 ]
 
 override_attributes(
