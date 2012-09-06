@@ -1,7 +1,7 @@
 #
 # Author:: Seth Chisamore (<schisamo@opscode.com>)
 # Cookbook Name:: java
-# Attributes:: default 
+# Attributes:: default
 #
 # Copyright 2010, Opscode, Inc.
 #
@@ -16,6 +16,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+# remove the deprecated Ubuntu jdk packages
+default['java']['remove_deprecated_packages'] = false
 
 # default jdk attributes
 default['java']['install_flavor'] = "openjdk"
