@@ -9,8 +9,9 @@ run_list [
 override_attributes(
   "gyorslevel" => {
     "war" => {
-      "url" => "http://dl.dropbox.com/u/73252658/gyorslevel/gyorslevel-1.0-56e2a90d3c.war",
-      "checksum" =>"e6fb44bb66edd0ac36c5926e660dbef159bb9d9c8e7830f1dd8d2d9c471b8d53"
+      "url" => "http://dl.dropbox.com/u/73252658/gyorslevel/gyorslevel-1.0-5d66b9c2c2.war",
+      "checksum" =>"0f10f8194b799838ca9d80927431a6ee57232cba2350cf45ff5dbf3a12e6015b"
+
         },    
     "domain" => "gyorslevel.info",
     "expiration" => "600000"
