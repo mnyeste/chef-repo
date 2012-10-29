@@ -3,7 +3,7 @@ description "Standalone server in AWS"
 
 run_list [
   "role[standalone]",
-  "role[zoneedit]"
+  "role[namecheap]"
 ]
 
 override_attributes(
