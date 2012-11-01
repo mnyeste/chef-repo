@@ -14,7 +14,7 @@ template "/etc/nginx/sites-available/default" do
   owner "root"
   group "root"
   mode 0644
-  notifies :reload, "service[jetty]"
+  notifies :reload, "service[nginx]"
 end
 
 
