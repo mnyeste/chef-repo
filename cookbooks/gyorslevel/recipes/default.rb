@@ -12,8 +12,8 @@ directory "/etc/gyorslevel" do
   owner node[:jetty][:user] 
 end
 
-template "/etc/gyorslevel/gyorslevel.cfg" do
-  source "gyorslevel_cfg.erb"
+template "/etc/gyorslevel/gyorslevel.conf" do
+  source "gyorslevel_conf.erb"
   group node[:jetty][:group]
   owner node[:jetty][:user] 
 end
