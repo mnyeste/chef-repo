@@ -1,5 +1,5 @@
 james.host = <%= node[:james][:host] %>
 expiration.timeout = <%= node[:gyorslevel][:expiration] %>
-gyorslevel.domain= <%= node[:gyorslevel][:domain] %>
+gyorslevel.domains= <%= node[:gyorslevel][:domains].join(", ") %>
 context.folder= <%= node[:gyorslevel][:staticstore] %>
 mode= <%= node[:gyorslevel][:mode] %>

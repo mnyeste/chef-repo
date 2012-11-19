@@ -15,7 +15,8 @@ end
 template "/etc/gyorslevel/gyorslevel.conf" do
   source "gyorslevel_conf.erb"
   group node[:jetty][:group]
-  owner node[:jetty][:user] 
+  owner node[:jetty][:user]
+  notifies :restart, "service[jetty]"
 end
 
 directory node[:gyorslevel][:staticstore] do
